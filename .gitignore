@@ -13,8 +13,6 @@
 # Ignore .fetch files in case you like to edit your project deps locally.
 /.fetch
 
-/.env
-
 # If the VM crashes, it generates a dump, let's ignore it too.
 erl_crash.dump
 
@@ -28,3 +26,5 @@ contracts_api-*.tar
 # we ignore priv/static. You may want to comment
 # this depending on your deployment strategy.
 /priv/static/
+
+.env
