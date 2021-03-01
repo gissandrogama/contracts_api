@@ -12,5 +12,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sobelow configuration to ensure application security
 - Coveralls configuration ensures application test coverage
 - Travis ci configuration to ensure the continuous integration process
-
-
