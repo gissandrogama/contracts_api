@@ -1,4 +1,4 @@
-defmodule ContractsApi.LegalEntyti.Company do
+defmodule ContractsApi.LegalEntytis.Company do
   use Ecto.Schema
   import Ecto.Changeset
   alias ContractsApi.Superscription.Address

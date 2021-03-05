@@ -19,3 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - codecov configuration
 - schemas creation (contracts, individuals, legal entities and address)
 - migrations (contracts, individuals, legal entities and address)
+
+## [0.0.2] - 2021-03-04
+### Added
+- criação do modulo 'Legal Enstity'
+- 
