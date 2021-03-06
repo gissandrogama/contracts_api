@@ -1,7 +1,7 @@
 defmodule ContractsApi.Covenant.Contract do
   use Ecto.Schema
   import Ecto.Changeset
-  alias ContractsApi.LegalEntyti.Company
+  alias ContractsApi.LegalEntytis.Company
   alias ContractsApi.PhysicalPerson.Person
 
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -22,7 +22,8 @@ defmodule ContractsApi.Covenant.Contract do
   def changeset(contract, attrs) do
     contract
     |> cast(attrs, [:file_pdf, :name, :description, :date, :company_id, :person_id])
-    |> foreign_key_constraint(:company_id, :person_id)
+    |> foreign_key_constraint(:company_id)
+    |> foreign_key_constraint(:person_id)
     |> validate_required([:file_pdf, :name, :description, :date])
   end
 end

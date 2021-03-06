@@ -19,9 +19,9 @@ defmodule ContractsApi.LegalEntytis.Company do
   @doc false
   def changeset(company, attrs) do
     company
-    |> cast(attrs, [:cnpj])
+    |> cast(attrs, [:name, :cnpj])
     |> cast_assoc(:addresses, with: &Address.changeset/2)
     |> cast_assoc(:contracts, with: &Contract.changeset/2)
-    |> validate_required([:cnpj])
+    |> validate_required([:name, :cnpj])
   end
 end
