@@ -10,5 +10,6 @@ defmodule ContractsApi.Repo.Migrations.CreateLegalEntytisname do
       timestamps()
     end
 
+    create(unique_index(:legal_entytis, [:cnpj]))
   end
 end

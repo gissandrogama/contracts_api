@@ -23,5 +23,6 @@ defmodule ContractsApi.LegalEntytis.Company do
     |> cast_assoc(:addresses, with: &Address.changeset/2)
     |> cast_assoc(:contracts, with: &Contract.changeset/2)
     |> validate_required([:name, :cnpj])
+    |> unique_constraint(:cnpj, message: "CNPJ already registered")
   end
 end
