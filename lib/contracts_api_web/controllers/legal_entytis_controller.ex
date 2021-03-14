@@ -5,6 +5,12 @@ defmodule ContractsApiWeb.LegalEntytisController do
 
   action_fallback ContractsApiWeb.FallbackController
 
+  def index(conn, _params) do
+    with companys <- LegalEntytis.list_companys() do
+      render(conn, "index.json", legal_entytis: companys)
+    end
+  end
+
   def create(conn, params) do
     with {:ok, company} <- LegalEntytis.create_company(params) do
       conn

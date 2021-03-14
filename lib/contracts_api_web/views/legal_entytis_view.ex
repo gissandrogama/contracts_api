@@ -2,8 +2,11 @@ defmodule ContractsApiWeb.LegalEntytisView do
   use ContractsApiWeb, :view
   alias ContractsApiWeb.LegalEntytisView
 
+  def render("index.json", %{legal_entytis: companys}) do
+    render_many(companys, LegalEntytisView, "company.json")
+  end
+
   def render("show.json", %{legal_entytis: company}) do
-    IO.inspect(company)
     render_one(company, LegalEntytisView, "company.json")
   end
 

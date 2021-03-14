@@ -5,6 +5,20 @@ defmodule ContractsApi.LegalEntytis do
   """
   alias ContractsApi.LegalEntytis.Company
   alias ContractsApi.Repo
+
+  @doc """
+  Função lista todas as empresas persistidas no banco de dados.
+
+  ## Examples
+
+      iex> list_companys()
+      [%Event{}, ...]
+  """
+  def list_companys do
+    Repo.all(Company)
+    |>  Repo.preload(:addresses)
+  end
+
   @doc """
   Função que insere uma compania no banco de dados. Essa função recebe um `map` com os campos e valores,
   faz um parser para `Company.changeset/2`, que valida as informações e retorna uma estrutura valida ou não.
