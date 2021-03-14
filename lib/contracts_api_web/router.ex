@@ -9,6 +9,7 @@ defmodule ContractsApiWeb.Router do
     pipe_through :api
 
     post "/companys", LegalEntytisController, :create
+    get "/companys", LegalEntytisController, :index
     get "/companys/:id", LegalEntytisController, :show
     # get "/companys", LegalEntytisController, :index
   end
