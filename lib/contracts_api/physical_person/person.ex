@@ -24,5 +24,6 @@ defmodule ContractsApi.PhysicalPerson.Person do
     |> cast_assoc(:addresses, with: &Address.changeset/2)
     |> cast_assoc(:contracts, with: &Contract.changeset/2)
     |> validate_required([:name, :cpf, :birth_date])
+    |> unique_constraint(:cpf, message: "CPF already registered")
   end
 end

@@ -11,5 +11,6 @@ defmodule ContractsApi.Repo.Migrations.CreatePhysicalPersons do
       timestamps()
     end
 
+    create(unique_index(:physical_persons, [:cpf]))
   end
 end
