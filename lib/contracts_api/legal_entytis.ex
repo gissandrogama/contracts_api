@@ -48,6 +48,7 @@ defmodule ContractsApi.LegalEntytis do
   """
   def get_company!(id) do
     Repo.get_by(Company, id: id)
+    |> Repo.preload(:addresses)
     |> case do
       nil -> {:error, :not_found}
       company -> {:ok, company}
