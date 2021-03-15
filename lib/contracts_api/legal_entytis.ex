@@ -46,7 +46,7 @@ defmodule ContractsApi.LegalEntytis do
   Essa função busca um compania pelo `id`.
 
   ## Paramentros da função
-  - id: `id` numero de indentificação do usuário
+  - id: `id` numero de indentificação da compania ou empresa
 
   ## Informações adcionais
     - caso id estaja incorreto ou não exista é retornado um `nil`.
