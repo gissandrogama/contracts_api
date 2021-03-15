@@ -3,6 +3,7 @@ defmodule ContractsApi.LegalEntytis.Company do
   import Ecto.Changeset
   alias ContractsApi.Superscription.Address
   alias ContractsApi.Covenant.Contract
+  alias ContractsApi.Part.Part
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -10,8 +11,9 @@ defmodule ContractsApi.LegalEntytis.Company do
     field :name, :string
     field :cnpj, :string
 
+    belongs_to :part, Part
+
     has_many :addresses, Address
-    has_many :contracts, Contract
 
     timestamps()
   end
@@ -19,7 +21,8 @@ defmodule ContractsApi.LegalEntytis.Company do
   @doc false
   def changeset(company, attrs) do
     company
-    |> cast(attrs, [:name, :cnpj])
+    |> cast(attrs, [:name, :cnpj, :part_id])
+    |> foreign_key_constraint(:part_id)
     |> cast_assoc(:addresses, with: &Address.changeset/2)
     |> cast_assoc(:contracts, with: &Contract.changeset/2)
     |> validate_required([:name, :cnpj])

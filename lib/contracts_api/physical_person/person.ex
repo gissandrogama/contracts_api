@@ -3,6 +3,7 @@ defmodule ContractsApi.PhysicalPerson.Person do
   import Ecto.Changeset
   alias ContractsApi.Superscription.Address
   alias ContractsApi.Covenant.Contract
+  alias ContractsApi.Part.Part
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -11,8 +12,9 @@ defmodule ContractsApi.PhysicalPerson.Person do
     field :cpf, :string
     field :name, :string
 
+    belongs_to :part, Part
+
     has_many :addresses, Address
-    has_many :contracts, Contract
 
     timestamps()
   end
@@ -20,9 +22,8 @@ defmodule ContractsApi.PhysicalPerson.Person do
   @doc false
   def changeset(person, attrs) do
     person
-    |> cast(attrs, [:name, :cpf, :birth_date])
+    |> cast(attrs, [:name, :cpf, :birth_date, :part_id])
     |> cast_assoc(:addresses, with: &Address.changeset/2)
-    |> cast_assoc(:contracts, with: &Contract.changeset/2)
     |> validate_required([:name, :cpf, :birth_date])
     |> unique_constraint(:cpf, message: "CPF already registered")
   end
