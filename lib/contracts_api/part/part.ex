@@ -22,6 +22,5 @@ defmodule ContractsApi.Part.Part do
     |> cast(attrs, [:contract_id])
     |> cast_assoc(:legal_entytis, with: &Company.changeset/2)
     |> cast_assoc(:physical_persons, with: &Person.changeset/2)
-    |> validate_required([:contract_id])
   end
 end

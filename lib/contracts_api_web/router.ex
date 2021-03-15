@@ -11,7 +11,10 @@ defmodule ContractsApiWeb.Router do
     post "/companys", LegalEntytisController, :create
     get "/companys", LegalEntytisController, :index
     get "/companys/:id", LegalEntytisController, :show
-    # get "/companys", LegalEntytisController, :index
+
+    post "/contracts", CovenantController, :create
+    get "/contracts", CovenantController, :index
+    get "/contracts/:id", CovenantController, :show
   end
 
   # Enables LiveDashboard only for development

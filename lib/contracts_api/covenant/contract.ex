@@ -1,7 +1,7 @@
 defmodule ContractsApi.Covenant.Contract do
   use Ecto.Schema
   import Ecto.Changeset
-  
+
   alias ContractsApi.Part.Part
 
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -12,7 +12,7 @@ defmodule ContractsApi.Covenant.Contract do
     field :file_pdf, :string
     field :name, :string
 
-    has_many :parts, Part
+    has_one :parts, Part
 
     timestamps()
   end
