@@ -12,7 +12,7 @@ defmodule ContractsApi.LegalEntytis do
   ## Examples
 
       iex> list_companys()
-      [%Event{}, ...]
+      [%Company{}, ...]
   """
   def list_companys do
     Repo.all(Company)
@@ -26,14 +26,12 @@ defmodule ContractsApi.LegalEntytis do
   ## Paramentros da função
   - nome: `nome` da empresa
   - CNPJ: cnpj da empresa
-  - endereço: informações a serem passadas em um map (:country, :state, :street, :zip_code)
+  - endereço: informações a serem passadas em uma lista de map (:country, :state, :street, :zip_code)
 
   ## Examples
 
       iex> Company.create_company(%{field: value})
       {:ok, %ContractsApi.LegalEntytis.Company{}}
-
-      iex> EventsApi.create_user(%{field: bad_value})
 
       iex> create_company(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
