@@ -2,7 +2,6 @@ defmodule ContractsApi.LegalEntytis.Company do
   use Ecto.Schema
   import Ecto.Changeset
   alias ContractsApi.Superscription.Address
-  alias ContractsApi.Covenant.Contract
   alias ContractsApi.Part.Part
 
   @primary_key {:id, :binary_id, autogenerate: true}
@@ -24,7 +23,6 @@ defmodule ContractsApi.LegalEntytis.Company do
     |> cast(attrs, [:name, :cnpj, :part_id])
     |> foreign_key_constraint(:part_id)
     |> cast_assoc(:addresses, with: &Address.changeset/2)
-    |> cast_assoc(:contracts, with: &Contract.changeset/2)
     |> validate_required([:name, :cnpj])
     |> unique_constraint(:cnpj, message: "CNPJ already registered")
   end

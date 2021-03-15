@@ -2,7 +2,6 @@ defmodule ContractsApi.PhysicalPerson.Person do
   use Ecto.Schema
   import Ecto.Changeset
   alias ContractsApi.Superscription.Address
-  alias ContractsApi.Covenant.Contract
   alias ContractsApi.Part.Part
 
   @primary_key {:id, :binary_id, autogenerate: true}
