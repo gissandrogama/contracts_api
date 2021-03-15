@@ -1,4 +1,4 @@
-defmodule ContractsApi.Repo.Migrations.CreateLegalEntytisname do
+defmodule ContractsApi.Repo.Migrations.CreateLegalEntytis do
   use Ecto.Migration
 
   def change do
