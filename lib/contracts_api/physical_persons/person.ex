@@ -3,7 +3,7 @@ defmodule ContractsApi.PhysicalPersons.Person do
   import Ecto.Changeset
 
   alias ContractsApi.Covenants.Contract
-
+  alias ContractsApi.Superscription.Address
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   schema "physical_persons" do
@@ -13,6 +13,8 @@ defmodule ContractsApi.PhysicalPersons.Person do
 
     belongs_to :contract, Contract
 
+    has_many :addresses, Address
+
     timestamps()
   end
 
@@ -21,6 +23,7 @@ defmodule ContractsApi.PhysicalPersons.Person do
     person
     |> cast(attrs, [:name, :cpf, :birth_date, :contract_id])
     |> foreign_key_constraint(:contract_id)
+    |> cast_assoc(:addresses, with: &Address.changeset/2)
     |> validate_required([:name, :cpf, :birth_date])
   end
 end
