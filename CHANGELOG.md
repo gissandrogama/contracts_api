@@ -3,7 +3,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-
 ## [0.0.1] - 2021-02-28
 ### Added
 - Project startup
@@ -65,5 +64,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add routers to persons
 ### Changes
 - small chande in routers of contracts
-
-
