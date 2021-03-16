@@ -59,12 +59,12 @@ defmodule ContractsApi.PhysicalPersons do
        {:ok, %ContractsApi.PhysicalPersons.Person{}}
 
   """
-  def get_company!(id) do
-    Repo.get_by(Company, id: id)
+  def get_person!(id) do
+    Repo.get_by(Person, id: id)
     |> Repo.preload(:addresses)
     |> case do
       nil -> {:error, :not_found}
-      company -> {:ok, company}
+      person -> {:ok, person}
     end
   end
 end
