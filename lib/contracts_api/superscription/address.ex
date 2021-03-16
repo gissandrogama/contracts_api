@@ -1,9 +1,12 @@
 defmodule ContractsApi.Superscription.Address do
+  @moduledoc """
+  schema of addresses
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias ContractsApi.PhysicalPersons.Person
   alias ContractsApi.LegalEntytis.Company
+  alias ContractsApi.PhysicalPersons.Person
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id

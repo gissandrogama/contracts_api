@@ -12,6 +12,5 @@ defmodule ContractsApi.Repo.Migrations.CreateContracts do
 
       timestamps()
     end
-
   end
 end

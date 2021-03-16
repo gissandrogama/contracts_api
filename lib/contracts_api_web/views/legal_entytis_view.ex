@@ -16,14 +16,14 @@ defmodule ContractsApiWeb.LegalEntytisView do
       name: company.name,
       cnpj: company.cnpj,
       addresses:
-      Enum.map(company.addresses, fn address ->
-        %{
-          country: address.country,
-          state: address.state,
-          street: address.street,
-          zip_code: address.zip_code
-        }
-      end)
+        Enum.map(company.addresses, fn address ->
+          %{
+            country: address.country,
+            state: address.state,
+            street: address.street,
+            zip_code: address.zip_code
+          }
+        end)
     }
   end
 end

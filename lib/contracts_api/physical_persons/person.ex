@@ -1,4 +1,7 @@
 defmodule ContractsApi.PhysicalPersons.Person do
+  @moduledoc """
+  schema of persons
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

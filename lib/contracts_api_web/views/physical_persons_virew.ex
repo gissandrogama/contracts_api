@@ -17,14 +17,14 @@ defmodule ContractsApiWeb.PhysicalPersonsView do
       cpf: person.cpf,
       birth_date: person.birth_date,
       addresses:
-      Enum.map(person.addresses, fn address ->
-        %{
-          country: address.country,
-          state: address.state,
-          street: address.street,
-          zip_code: address.zip_code
-        }
-      end)
+        Enum.map(person.addresses, fn address ->
+          %{
+            country: address.country,
+            state: address.state,
+            street: address.street,
+            zip_code: address.zip_code
+          }
+        end)
     }
   end
 end

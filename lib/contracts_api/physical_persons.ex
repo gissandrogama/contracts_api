@@ -16,7 +16,7 @@ defmodule ContractsApi.PhysicalPersons do
   """
   def list_persons do
     Repo.all(Person)
-    |>  Repo.preload(:addresses)
+    |> Repo.preload(:addresses)
   end
 
   @doc """

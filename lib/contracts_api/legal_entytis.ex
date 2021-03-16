@@ -16,7 +16,7 @@ defmodule ContractsApi.LegalEntytis do
   """
   def list_companys do
     Repo.all(Company)
-    |>  Repo.preload(:addresses)
+    |> Repo.preload(:addresses)
   end
 
   @doc """

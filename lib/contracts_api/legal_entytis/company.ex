@@ -1,4 +1,7 @@
 defmodule ContractsApi.LegalEntytis.Company do
+  @moduledoc """
+  schema of Company
+  """
   use Ecto.Schema
   import Ecto.Changeset
   alias ContractsApi.Covenants.Contract

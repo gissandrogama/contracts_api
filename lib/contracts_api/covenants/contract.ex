@@ -1,4 +1,7 @@
 defmodule ContractsApi.Covenants.Contract do
+  @moduledoc """
+  schema of contract
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
