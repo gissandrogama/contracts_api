@@ -1,4 +1,4 @@
-defmodule ContractsApiWeb.CovenantView do
+defmodule ContractsApiWeb.CovenantsView do
   use ContractsApiWeb, :view
   alias ContractsApiWeb.CovenantView
 
@@ -7,7 +7,6 @@ defmodule ContractsApiWeb.CovenantView do
   end
 
   def render("show.json", %{covenant: contract}) do
-    IO.inspect(contract)
     render_one(contract, CovenantView, "contract.json")
   end
 
