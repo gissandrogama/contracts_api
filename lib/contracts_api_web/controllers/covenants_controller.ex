@@ -1,4 +1,4 @@
-defmodule ContractsApiWeb.CovenantController do
+defmodule ContractsApiWeb.CovenantsController do
   use ContractsApiWeb, :controller
 
   alias ContractsApi.Covenant
