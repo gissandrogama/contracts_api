@@ -12,9 +12,9 @@ defmodule ContractsApiWeb.Router do
     get "/companys", LegalEntytisController, :index
     get "/companys/:id", LegalEntytisController, :show
 
-    post "/contracts", CovenantController, :create
-    get "/contracts", CovenantController, :index
-    get "/contracts/:id", CovenantController, :show
+    post "/contracts", CovenantsController, :create
+    get "/contracts", CovenantsController, :index
+    get "/contracts/:id", CovenantsController, :show
 
     post "/persons", PhysicalPersonsController, :create
     get "/persons", PhysicalPersonsController, :index
