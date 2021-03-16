@@ -7,6 +7,18 @@ defmodule ContractsApiWeb.Router do
 
   scope "/api", ContractsApiWeb do
     pipe_through :api
+
+    post "/companys", LegalEntytisController, :create
+    get "/companys", LegalEntytisController, :index
+    get "/companys/:id", LegalEntytisController, :show
+
+    post "/contracts", CovenantsController, :create
+    get "/contracts", CovenantsController, :index
+    get "/contracts/:id", CovenantsController, :show
+
+    post "/persons", PhysicalPersonsController, :create
+    get "/persons", PhysicalPersonsController, :index
+    get "/persons/:id", PhysicalPersonsController, :show
   end
 
   # Enables LiveDashboard only for development

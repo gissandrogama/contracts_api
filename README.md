@@ -1,5 +1,7 @@
 # ContractsApi
 
+[![Build Status](https://www.travis-ci.com/gissandrogama/contracts_api.svg?branch=main)](https://www.travis-ci.com/gissandrogama/contracts_api)
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
